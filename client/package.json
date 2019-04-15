@@ -7,7 +7,7 @@
   "name": "videos",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://antkeo1.github.io/VideoApp/",
+  "homepage": "https://antkeo1.github.io/Stream/",
   "dependencies": {
     "axios": "^0.18.0",
     "react": "^16.8.4",

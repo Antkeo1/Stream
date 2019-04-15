@@ -1,7 +1,7 @@
 import React from 'react'
 
 const StreamEdit = () => {
-  return <div>StreamList</div>
+  return <div>StreamEdit</div>
 }
 
 export default StreamEdit
