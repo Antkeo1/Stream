@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {signIn, signOut} from '../Actions'
+import {signIn, signOut} from '../Actions';
 
 class GoogleAuth extends React.Component {
   // wired google api with client id and email as the scope for oauth
