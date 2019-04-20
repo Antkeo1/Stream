@@ -33,7 +33,7 @@ class StreamCreate extends React.Component {
   render() {
     return (
       <form onSubmit={this.props.handleSubmit(this.onSubmit)}
-            className='ui form'>
+            className='ui form error'>
         <Field name='title' component={this.renderInput} label='Enter title'/>
         <Field name='description' component={this.renderInput} label='Enter description' />
         <button className='ui button primary'>Submit</button>
