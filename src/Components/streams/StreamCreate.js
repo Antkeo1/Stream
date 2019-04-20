@@ -6,11 +6,13 @@ import React from 'react'
 import {Field, reduxForm } from 'redux-form'
 
 class StreamCreate extends React.Component {
-  renderInput = ({input, label}) => {
+  renderInput = ({input, label, meta}) => {
+    console.log(meta)
     return (
       <div className='field'>
       <label>{label}</label>
         <input {...input} />
+        <div>{meta.error}</div>
       </div>
     )
   }
@@ -21,16 +23,33 @@ class StreamCreate extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.props.handleSubmit(this.onSubmit)} className='ui form'>
+      <form onSubmit={this.props.handleSubmit(this.onSubmit)}
+            className='ui form'>
         <Field name='title' component={this.renderInput} label='Enter title'/>
-        <Field name='desciption' component={this.renderInput} label='Enter desiption' />
+        <Field name='description' component={this.renderInput} label='Enter description' />
         <button className='ui button primary'>Submit</button>
       </form>
     )
   }
 }
 
+// to make sure input is filled in and deal with error
+const validate = formValues => {
+  console.log(formValues)
+  const errors = {}
+  if(!formValues.title) {
+    // only run if user didnt enter title
+    errors.title = 'Please Enter title'
+  }
+
+  if (!formValues.description) {
+    errors.description = 'Please Enter description'
+  }
+
+  return errors
+}
 
 export default reduxForm({
-  form:'StreamCreate'
+  form:'StreamCreate',
+  validate
 })(StreamCreate)
