@@ -4,6 +4,8 @@ import React from 'react'
 // with it we will be able to call action creators and
 // get form data into our component
 import {Field, reduxForm } from 'redux-form'
+import {connect} from 'react-redux'
+import { createStream } from '../../Actions'
 
 class StreamCreate extends React.Component {
   renderError = ({error, touched}) => {
@@ -17,8 +19,9 @@ class StreamCreate extends React.Component {
   }
 
   renderInput = ({input, label, meta}) => {
+    const className = `field ${meta.error && meta.touched ? 'error': ''}`
     return (
-      <div className='field'>
+      <div className={className}>
       <label>{label}</label>
         <input {...input} autoComplete='off'/>
         {this.renderError(meta)}
@@ -26,6 +29,7 @@ class StreamCreate extends React.Component {
     )
   }
 
+  // api request
   onSubmit = (formValues) => {
     console.log(formValues)
   }
@@ -57,7 +61,9 @@ const validate = formValues => {
   return errors
 }
 
-export default reduxForm({
+const formWrapped = reduxForm({
   form:'StreamCreate',
   validate
 })(StreamCreate)
+
+export default connect()(formWrapped)
