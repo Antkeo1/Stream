@@ -10,6 +10,7 @@
   "homepage": "https://antkeo1.github.io/Stream/",
   "dependencies": {
     "axios": "^0.18.0",
+    "lodash": "^4.17.11",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-redux": "^7.0.2",
