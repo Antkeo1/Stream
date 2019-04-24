@@ -6,6 +6,7 @@ import StreamShow from './streams/StreamShow'
 import StreamEdit from './streams/StreamEdit'
 import StreamDelete from './streams/StreamDelete'
 import Header from './Header'
+import history from '../history'
 
 class App extends React.Component {
   state = {
@@ -16,8 +17,7 @@ class App extends React.Component {
     return (
       <div className='ui container '>
 
-        <BrowserRouter>
-
+        <BrowserRouter history={history}>
           <div>
             <Header />
             <Route path='/' exact component={StreamList}/>
