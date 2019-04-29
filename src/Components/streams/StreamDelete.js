@@ -33,12 +33,12 @@ class StreamDelete extends React.Component {
 
   render() {
     return (
-          <Modal
-            title='Delete Stream'
-            content={this.renderContent()}
-            actions={this.renderActions()}
-            onDismiss={() => history.push('/')}
-          />
+        <Modal
+          title='Delete Stream'
+          content={this.renderContent()}
+          actions={this.renderActions()}
+          onDismiss={() => history.push('/')}
+        />
       )
     }
   }
