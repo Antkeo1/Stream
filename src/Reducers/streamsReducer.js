@@ -8,7 +8,9 @@ import {
 } from '../Actions/types'
 
 export default (state = {}, action) => {
+  console.log(state)
   switch(action.type) {
+
     case FETCH_STREAMS:
       return {...state, ..._.mapKeys(action.payload, 'id' )}
 
@@ -28,4 +30,5 @@ export default (state = {}, action) => {
     default:
       return state
   }
+
 }
